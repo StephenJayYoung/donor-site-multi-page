@@ -326,6 +326,14 @@ font-size: 22px !important
 		padding-bottom: 25px !important;
 	}
 
+		.cover-costs-desc{
+		padding-bottom: 0px !important;
+	}
+
+	.legacy-desc {
+     padding-bottom: 0px !important; 
+}
+
 	#portfolio:not(.portfolio-1) .portfolio-desc h3 {
     font-size: 14px;
 	}
