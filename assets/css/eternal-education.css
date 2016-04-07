@@ -251,6 +251,10 @@ background-color: #e38d77 !important;
 	background-color: #f7f7f7;
 }
 
+.about-text{
+font-size: 22px !important
+}
+
 .feature-box p {
     color: #000;
 }
