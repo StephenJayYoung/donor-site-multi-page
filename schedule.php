@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $subject = "{$subjectPrefix}";
         $body = "
-            <p>An appointment request was submitted from <strong>jimcolemandds.com</strong> on ".date('M d, Y')."</p>
+            <p>An information request was submitted from <strong>Eternal Education Gift Donation</strong> on ".date('M d, Y')."</p>
             <hr />
             <table border='1' cellpadding='2' cellspacing='0' style='border: 1px solid #333; border-bottom: none; width: 100%;'>
                 <tr><td width='1' style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Name: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$person}</td></tr>
