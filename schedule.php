@@ -1,9 +1,9 @@
 <?php
 
-$officeNotifierEmail    = "enter email address here";
-$subjectPrefix          = "New Consultation Request from jimcolemandds.com";
-$successMessage         = "Enter message re email being sent here";
-$officeEmail            = "enter same email here";
+$officeNotifierEmail    = "stephenjyyoung@gmail.com";
+$subjectPrefix          = "Information request from Eternal Education Gift Donation";
+$successMessage         = "Email Inquiry";
+$officeEmail            = "stephenjayyoung@gmail.com";
 
 $errors                 = array();
 $data                   = array();
