@@ -25,6 +25,7 @@
             , respond:      $('input[name="respond"]').val()
             , honeypot:     $('input[name="email"]').val()
             , phone:        $('input[name="phone"]').val()
+            , address:        $('input[name="address"]').val()
             , comments:     $('textarea[name="comments"]').val()
         };
 

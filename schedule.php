@@ -1,8 +1,8 @@
 <?php
 
 $officeNotifierEmail    = "stephenjayyoung@gmail.com";
-$subjectPrefix          = "New Consultation Request from EEGD";
-$successMessage         = "Message you will recieve if success";
+$subjectPrefix          = "New Inquiry from EEGD site";
+$successMessage         = "Your message has been sent!";
 $officeEmail            = "stephenjayyoung@gmail.com";
 
 $errors                 = array();
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $respond    = stripslashes(trim($_POST['respond']));
     $phone      = stripslashes(trim($_POST['phone']));
     $email      = stripslashes(trim($_POST['honeypot']));
-    $address    = stripslashes(trim($_POST['address']));
+    $address      = stripslashes(trim($_POST['address']));
     $comments    = stripslashes(trim($_POST['comments']));
 
     if (empty($person)) {
@@ -33,10 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['phone'] = "Your phone number is required.";
     }
 
-    // if (empty($address)) {
-    // $errors['address'] = "Your address is required.";
-    // }
-
     if (!empty($email)) {
         $data['message'] = "Your request could not be sent at this time.";
         $data['success'] = false;
@@ -52,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $subject = "{$subjectPrefix}";
         $body = "
-            <p>An appointment request was submitted from <strong>YCS</strong> on ".date('M d, Y')."</p>
+            <p>An inquiry was submitted from <strong>Eternal Education Gift Donation</strong> on ".date('M d, Y')."</p>
             <hr />
             <table border='1' cellpadding='2' cellspacing='0' style='border: 1px solid #333; border-bottom: none; width: 100%;'>
                 <tr><td width='1' style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Name: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$person}</td></tr>
@@ -60,7 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Phone: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$phone}</td></tr>
                 <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Address: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$address}</td></tr>
                 <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Inquiry: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$comments}</td></tr>
-
             </table>
         ";
 
