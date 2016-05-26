@@ -1,7 +1,7 @@
 <?php
 
 $officeNotifierEmail    = "stephenjayyoung@gmail.com";
-$subjectPrefix          = "New Consultation Request from jimcolemandds.com";
+$subjectPrefix          = "New Consultation Request from EEGD";
 $successMessage         = "Message you will recieve if success";
 $officeEmail            = "stephenjayyoung@gmail.com";
 
@@ -33,9 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['phone'] = "Your phone number is required.";
     }
 
-    if (empty($address)) {
-    $errors['address'] = "Your address is required.";
-    }
+    // if (empty($address)) {
+    // $errors['address'] = "Your address is required.";
+    // }
 
     if (!empty($email)) {
         $data['message'] = "Your request could not be sent at this time.";
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Email: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$respond}</td></tr>
                 <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Phone: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$phone}</td></tr>
                 <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Address: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$address}</td></tr>
-                <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Inquiry: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$inquiry}</td></tr>
+                <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Inquiry: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$comments}</td></tr>
 
             </table>
         ";
