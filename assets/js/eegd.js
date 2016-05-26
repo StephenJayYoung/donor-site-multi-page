@@ -91,53 +91,6 @@ jQuery(document).ready(function($){
         startWithSlide: 0,
     });
 
-    // tour scripts
-    var relatedPortfolio = $("#related-portfolio");
 
-    relatedPortfolio.owlCarousel({
-        margin: 0,
-        nav: true,
-        navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
-        autoplay: false,
-        autoplayHoverPause: true,
-        dots: false,
-        loop: true,
-        touchDrag: false,
-        responsive:{
-            0:{ items:1 },
-            600:{ items:2 },
-            1000:{ items:3 },
-            1200:{ items:4 },
-            1400:{ items:5 }
-        }
-    });
 
-    // google maps script
-    $('#google-map').gMap({
-
-        address: '1144-C India Hook Rd, Rock Hill, SC',
-        maptype: 'ROADMAP',
-        zoom: 16,
-        markers: [
-            {
-                address: "1144-C India Hook Rd, Rock Hill, SC 29732",
-                icon: {
-                    image: "assets/images/icons/map-icon-red.png",
-                    iconsize: [32, 39],
-                    iconanchor: [32,39]
-                }
-            }
-        ],
-        doubleclickzoom: false,
-        controls: {
-            panControl: true,
-            zoomControl: true,
-            mapTypeControl: true,
-            scaleControl: false,
-            streetViewControl: false,
-            overviewMapControl: false,
-            draggable: false
-        }
-
-    });
 });
