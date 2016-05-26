@@ -1,7 +1,7 @@
 <?php
 
 $officeNotifierEmail    = "stephenjyyoung@gmail.com";
-$subjectPrefix          = "Information request from Eternal Education Gift Donation";
+$subjectPrefix          = "Information request from Eternal Education Gift Donation Website";
 $successMessage         = "Email Inquiry";
 $officeEmail            = "stephenjayyoung@gmail.com";
 
@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $person     = stripslashes(trim($_POST['person']));
     $respond    = stripslashes(trim($_POST['respond']));
     $phone      = stripslashes(trim($_POST['phone']));
+    $address    = stripslashes(trim($_POST['address']));
     $email      = stripslashes(trim($_POST['honeypot']));
 
     if (empty($person)) {
@@ -24,11 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (!preg_match('/^[^0-9][A-z0-9._%+-]+([.][A-z0-9_]+)*[@][A-z0-9_]+([.][A-z0-9_]+)*[.][A-z]{2,4}$/', $respond)) {
-        $errors['respond'] = "Your email is invalid.";            
+        $errors['respond'] = "Your email is invalid.";
     }
 
     if (empty($phone)) {
         $errors['phone'] = "Your phone number is required.";
+    }
+
+    if (empty($address)) {
+    $errors['address'] = "Your address is required.";
     }
 
     if (!empty($email)) {
