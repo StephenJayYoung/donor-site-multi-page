@@ -1,8 +1,8 @@
 <?php
 
-$officeNotifierEmail    = "stephenjyyoung@gmail.com";
-$subjectPrefix          = "Information request from Eternal Education Gift Donation Website";
-$successMessage         = "Email Inquiry";
+$officeNotifierEmail    = "stephenjayyoung@gmail.com";
+$subjectPrefix          = "New Consultation Request from jimcolemandds.com";
+$successMessage         = "Message you will recieve if success";
 $officeEmail            = "stephenjayyoung@gmail.com";
 
 $errors                 = array();
@@ -13,8 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $person     = stripslashes(trim($_POST['person']));
     $respond    = stripslashes(trim($_POST['respond']));
     $phone      = stripslashes(trim($_POST['phone']));
-    $address    = stripslashes(trim($_POST['address']));
     $email      = stripslashes(trim($_POST['honeypot']));
+    $address    = stripslashes(trim($_POST['address']));
+    $comments    = stripslashes(trim($_POST['comments']));
 
     if (empty($person)) {
         $errors['person'] = "Your name is required.";
@@ -51,12 +52,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $subject = "{$subjectPrefix}";
         $body = "
-            <p>An information request was submitted from <strong>Eternal Education Gift Donation</strong> on ".date('M d, Y')."</p>
+            <p>An appointment request was submitted from <strong>YCS</strong> on ".date('M d, Y')."</p>
             <hr />
             <table border='1' cellpadding='2' cellspacing='0' style='border: 1px solid #333; border-bottom: none; width: 100%;'>
                 <tr><td width='1' style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Name: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$person}</td></tr>
                 <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Email: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$respond}</td></tr>
                 <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Phone: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$phone}</td></tr>
+                <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Address: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$address}</td></tr>
+                <tr><td width='1'style='border-bottom: 1px solid #333; padding: 5px; width: 1px; white-space:nowrap; font-weight: bold; background-color: #dedede;'><strong>Inquiry: </strong></td><td style='border-bottom: 1px solid #333; padding: 5px;'>&nbsp;{$inquiry}</td></tr>
+
             </table>
         ";
 
