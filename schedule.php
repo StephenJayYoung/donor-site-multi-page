@@ -1,9 +1,9 @@
 <?php
 
-$officeNotifierEmail    = "stephenjayyoung@gmail.com";
+$officeNotifierEmail    = "info@eegdonation.com";
 $subjectPrefix          = "New Inquiry from EEGD site";
-$successMessage         = "Your message has been sent!";
-$officeEmail            = "stephenjayyoung@gmail.com";
+$successMessage         = "Thanks you! Your message has been sent!";
+$officeEmail            = "info@eegdonation.com";
 
 $errors                 = array();
 $data                   = array();
